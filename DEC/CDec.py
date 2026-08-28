@@ -59,8 +59,6 @@ class CapstoneDecompiler:
         if not instructions:
             return "    // No valid execution to decompile."
 
-        # ARM64-Compliant Loop Boundary Tracker: Extracts instruction operands and strips '#' 
-        # to prevent baseline truncation error during virtual address hex parsing.
         loops = {int(ins.op_str.strip("#"), 16) if ins.op_str.strip("#").startswith("0x") else int(ins.op_str.strip("#")) for ins in instructions if (ins.mnemonic in ["jmp", "b"] or ins.mnemonic.startswith("j")) and (lambda t: t < ins.address)(int(ins.op_str.strip("#"), 16) if ins.op_str.strip("#").startswith("0x") else int(ins.op_str.strip("#")) if ins.op_str.strip("#").isdigit() else 0)}
 
         math_signs = {

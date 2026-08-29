@@ -12,11 +12,6 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-# This code in these file is not meant for humans. 
-# It is written for the processor.
-# The code in this file might still be sane,
-# but brace yourself for the others.
-
 import sys
 import os
 import re

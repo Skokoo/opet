@@ -147,6 +147,12 @@ class Runnow:
         length = len(data)               
         return -sum((count / length) * math.log2(count / length) for count in [data.count(byte) for byte in set(data)])
 
+    def syntax_color(self, text):
+        text = re.sub(r'(//.*)', r'\033[38;5;239m\1\033[0m', text)
+        text = re.sub(r'\b(void|return|if|arg\d+|arg\d+_32|local_res)\b', r'\033[34m\1\033[0m', text)
+        text = re.sub(r'\b(byte\s+ptr|dword\s+ptr)\b', r'\033[34m\1\033[0m', text)                    
+        return text
+
     def check_and_print(self, out_str):
         if out_str is None or not isinstance(out_str, str):
             print("[\033[1mWARNING\033[0m] decompiler returned no or empty block.")

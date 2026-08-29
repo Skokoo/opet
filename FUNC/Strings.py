@@ -95,10 +95,11 @@ class StringsExtract:
                     if not is_junk:
                         decompiled = pseudo
 
-            lines.append(f"  {hex(offset)}\t{hex(vaddr)}\t-> {color}{text}{reset}")
+            lines.append(f"  {hex(offset)}\t{hex(vaddr)}\t-> \033[38;5;208m{text}{reset}")
             if decompiled and "{" in decompiled:
                 if len(decompiled.strip().split("\n")) > 2:
-                   lines.append(decompiled)               
+                   colored = self.shell.syntax_color(decompiled)
+                   lines.append(colored)               
 
         lines.append("")
         self.shell.check_and_print("\n".join(lines))

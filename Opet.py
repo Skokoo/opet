@@ -317,8 +317,8 @@ class Runnow:
                                  f"  {BOLD}ai{RESET}          : validate section headers\n"
                                  f"  {BOLD}!{RESET}<command>  : pipe direct command execution routing to the native Linux shell\n"
                                  f"  {BOLD}?, help{RESET}     : show this guide\n"
-                                 f"  q, {BOLD}exit{RESET}     : exit\n"
-                                 f" 'fun' fact: you can input any arbitrary number for the 'pd' and 'ax' commands, as long as your device and the target binary file are compatible :) Example: pd 827382737 or even higher.\n\n")                                                                                      
+                                 f"  q, {BOLD}exit{RESET}     : exit\n\n"
+                                 f" 'fun' fact: you can input any arbitrary number for the 'pd' and 'ax' commands, as long as your device and the target binary file are compatible :) Example: pd 827382737 or even higher.\n")                                                                                      
                     self.check_and_print(help_text)                 
 
                 elif cmd == "pd":
